@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مطعم بيجي الملكي</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+:root{
+
+--main:#8B0000;
+--gold:#D4AF37;
+--dark:#111;
+--white:#fff;
+--gray:#f5f5f5;
+--green:#25D366;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--gray);
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1600');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+padding:20px;
+
+color:white;
+
+}
+
+.hero-content{
+
+max-width:750px;
+animation:fadeUp 1s ease;
+
+}
+
+.hero h1{
+
+font-size:70px;
+margin-bottom:20px;
+color:var(--gold);
+font-weight:800;
+
+}
+
+.hero p{
+
+font-size:22px;
+line-height:1.9;
+margin-bottom:35px;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+padding:16px 35px;
+background:var(--green);
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-size:20px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+.hero-btn:hover{
+transform:scale(1.05);
+}
+
+/* TITLE */
+
+.section-title{
+
+text-align:center;
+font-size:42px;
+margin:80px 0 40px;
+font-weight:800;
+color:var(--dark);
+position:relative;
+
+}
+
+.section-title::after{
+
+content:'';
+width:130px;
+height:5px;
+background:var(--gold);
+
+position:absolute;
+bottom:-14px;
+right:50%;
+
+transform:translateX(50%);
+border-radius:20px;
+
+}
+
+/* MENU */
+
+.menu{
+
+padding:20px 6%;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+border-radius:28px;
+overflow:hidden;
+
+box-shadow:
+0 10px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+
+position:relative;
+
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+
+width:100%;
+height:250px;
+object-fit:cover;
+
+}
+
+.badge{
+
+position:absolute;
+top:15px;
+left:15px;
+
+background:var(--gold);
+color:black;
+
+padding:8px 16px;
+border-radius:30px;
+
+font-size:14px;
+font-weight:bold;
+
+}
+
+.content{
+padding:22px;
+}
+
+.content h2{
+
+font-size:30px;
+margin-bottom:10px;
+color:var(--dark);
+
+}
+
+.desc{
+
+color:#666;
+line-height:1.8;
+margin-bottom:15px;
+
+}
+
+.price{
+
+font-size:24px;
+font-weight:800;
+color:var(--main);
+
+margin-bottom:15px;
+
+}
+
+.total{
+
+background:#f7f7f7;
+padding:14px;
+border-radius:14px;
+
+font-size:20px;
+font-weight:bold;
+
+color:#8B0000;
+
+text-align:center;
+
+margin-bottom:18px;
+
+}
+
+/* INPUTS */
+
+label{
+
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+color:#333;
+
+}
+
+.input{
+
+width:100%;
+padding:14px;
+
+border-radius:14px;
+border:1px solid #ddd;
+
+font-size:16px;
+
+margin-bottom:16px;
+outline:none;
+
+transition:.3s;
+
+}
+
+.input:focus{
+
+border-color:var(--gold);
+
+}
+
+textarea{
+
+resize:none;
+height:100px;
+
+}
+
+/* BUTTON */
+
+.order-btn{
+
+width:100%;
+
+padding:15px;
+border:none;
+
+border-radius:15px;
+
+background:var(--green);
+
+color:white;
+
+font-size:18px;
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.order-btn:hover{
+
+background:#1ea952;
+transform:scale(1.02);
+
+}
+
+/* FEATURES */
+
+.features{
+
+padding:80px 6%;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.feature{
+
+background:white;
+padding:35px 20px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.06);
+
+}
+
+.feature i{
+
+font-size:45px;
+color:var(--gold);
+
+margin-bottom:20px;
+
+}
+
+.feature h3{
+
+margin-bottom:10px;
+font-size:24px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+background:var(--dark);
+
+color:white;
+
+padding:55px 20px;
+text-align:center;
+
+margin-top:70px;
+
+}
+
+footer h2{
+
+font-size:38px;
+color:var(--gold);
+
+margin-bottom:15px;
+
+}
+
+.social{
+
+display:flex;
+justify-content:center;
+gap:18px;
+
+margin-top:25px;
+
+}
+
+.social a{
+
+width:52px;
+height:52px;
+
+background:#222;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:50%;
+
+color:white;
+font-size:22px;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.social a:hover{
+
+background:var(--green);
+transform:translateY(-5px);
+
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title{
+font-size:32px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>مطعم بيجي الملكي</h1>
+
+<p>
+أشهى المأكولات العراقية والمشاوي الفاخرة
+بطعم أصيل وخدمة سريعة
+</p>
+
+<a href="#menu" class="hero-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+ اطلب الآن
+
+</a>
+
+</div>
+
+</section>
+
+<!-- MENU -->
+
+<h2 class="section-title" id="menu">
+
+المنيو الخاص بنا
+
+</h2>
+
+<section class="menu">
+
+<!-- ITEM 1 -->
+
+<div class="card">
+
+<div class="badge">
+الأكثر طلباً
+</div>
+
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200">
+
+<div class="content">
+
+<h2>كباب عراقي</h2>
+
+<p class="desc">
+لحم مشوي على الفحم مع الخبز العراقي والسلطات
+</p>
+
+<div class="price">
+السعر: 10000 د.ع
+</div>
+
+<div class="total">
+المجموع:
+<span id="total1">
+10000
+</span>
+د.ع
+</div>
+
+<label>
+العدد
+</label>
+
+<input
+type="number"
+id="qty1"
+value="1"
+min="1"
+class="input"
+
+oninput="updatePrice(
+10000,
+'qty1',
+'total1'
+)">
+
+<label>
+الملاحظات
+</label>
+
+<textarea
+id="note1"
+class="input"
+placeholder="مثال: بدون بصل - حار">
+</textarea>
+
+<button
+class="order-btn"
+
+onclick="order(
+'كباب عراقي',
+'qty1',
+'note1',
+'total1'
+)">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+ اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ITEM 2 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1529692236671-f1dc01f55f32?q=80&w=1200">
+
+<div class="content">
+
+<h2>تكّة دجاج</h2>
+
+<p class="desc">
+قطع دجاج متبلة ومشوية مع صوص خاص
+</p>
+
+<div class="price">
+السعر: 12000 د.ع
+</div>
+
+<div class="total">
+المجموع:
+<span id="total2">
+12000
+</span>
+د.ع
+</div>
+
+<label>
+العدد
+</label>
+
+<input
+type="number"
+id="qty2"
+value="1"
+min="1"
+class="input"
+
+oninput="updatePrice(
+12000,
+'qty2',
+'total2'
+)">
+
+<label>
+الملاحظات
+</label>
+
+<textarea
+id="note2"
+class="input"
+placeholder="مثال: زيادة ثوم">
+</textarea>
+
+<button
+class="order-btn"
+
+onclick="order(
+'تكّة دجاج',
+'qty2',
+'note2',
+'total2'
+)">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+ اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ITEM 3 -->
+
+<div class="card">
+
+<div class="badge">
+جديد
+</div>
+
+<img src="https://images.unsplash.com/photo-1604908554027-1b92f6f4e3b4?q=80&w=1200">
+
+<div class="content">
+
+<h2>دولمة عراقية</h2>
+
+<p class="desc">
+دولمة عراقية أصلية بطعم بيتي فاخر
+</p>
+
+<div class="price">
+السعر: 8000 د.ع
+</div>
+
+<div class="total">
+المجموع:
+<span id="total3">
+8000
+</span>
+د.ع
+</div>
+
+<label>
+العدد
+</label>
+
+<input
+type="number"
+id="qty3"
+value="1"
+min="1"
+class="input"
+
+oninput="updatePrice(
+8000,
+'qty3',
+'total3'
+)">
+
+<label>
+الملاحظات
+</label>
+
+<textarea
+id="note3"
+class="input"
+placeholder="مثال: حارة">
+</textarea>
+
+<button
+class="order-btn"
+
+onclick="order(
+'دولمة عراقية',
+'qty3',
+'note3',
+'total3'
+)">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+ اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ITEM 4 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200">
+
+<div class="content">
+
+<h2>شاورما لحم</h2>
+
+<p class="desc">
+شاورما لحم مع البطاطا والصوص الخاص
+</p>
+
+<div class="price">
+السعر: 7000 د.ع
+</div>
+
+<div class="total">
+المجموع:
+<span id="total4">
+7000
+</span>
+د.ع
+</div>
+
+<label>
+العدد
+</label>
+
+<input
+type="number"
+id="qty4"
+value="1"
+min="1"
+class="input"
+
+oninput="updatePrice(
+7000,
+'qty4',
+'total4'
+)">
+
+<label>
+الملاحظات
+</label>
+
+<textarea
+id="note4"
+class="input"
+placeholder="مثال: بدون مخلل">
+</textarea>
+
+<button
+class="order-btn"
+
+onclick="order(
+'شاورما لحم',
+'qty4',
+'note4',
+'total4'
+)">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+ اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<h2 class="section-title">
+
+لماذا نحن؟
+
+</h2>
+
+<section class="features">
+
+<div class="feature">
+
+<i class="fa-solid fa-fire"></i>
+
+<h3>
+شوي على الفحم
+</h3>
+
+<p>
+نكهة عراقية أصلية
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-truck"></i>
+
+<h3>
+توصيل سريع
+</h3>
+
+<p>
+إلى جميع المناطق
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>
+جودة ممتازة
+</h3>
+
+<p>
+مكونات طازجة يومياً
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<h3>
+طلب مباشر
+</h3>
+
+<p>
+عبر واتساب بسهولة
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+مطعم بيجي الملكي
+</h2>
+
+<p>
+نكهة عراقية أصيلة منذ سنوات
+</p>
+
+<div class="social">
+
+<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+</div>
+
+</footer>
+
+<script>
+
+function updatePrice(price, qtyId, totalId){
+
+let qty =
+document.getElementById(qtyId).value;
+
+let total = price * qty;
+
+document.getElementById(totalId)
+.innerText = total;
+
+}
+
+function order(item, qtyId, noteId, totalId){
+
+let phone = "9647705150258";
+
+let qty =
+document.getElementById(qtyId).value;
+
+let note =
+document.getElementById(noteId).value;
+
+let total =
+document.getElementById(totalId).innerText;
+
+let message =
+`🍽️ طلب جديد
+
+📌 الصنف:
+${item}
+
+🔢 العدد:
+${qty}
+
+💰 المجموع:
+${total} د.ع
+
+📝 الملاحظات:
+${note}`;
+
+let url =
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+window.open(url,'_blank');
+
+}
+
+</script>
+
+</body>
+</html>
